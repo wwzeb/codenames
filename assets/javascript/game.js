@@ -1,7 +1,13 @@
-var settingToggles = [{
-  name: 'Color-blind mode',
-  setting: 'colorBlind',
-}]
+var settingToggles = [
+    {
+        name: 'Color-blind mode',
+        setting: 'colorBlind',
+    }, 
+    {
+        name: 'Dark mode',
+        setting: 'darkMode',
+    }
+]
 
 window.Game = React.createClass({
     propTypes: {
@@ -37,6 +43,7 @@ window.Game = React.createClass({
     extraClasses: function() {
         var classes = '';
         if (this.state.settings.colorBlind) classes += ' color-blind';
+        if (this.state.settings.darkMode) classes += ' dark-mode';
         return classes;
     },
 
@@ -147,6 +154,10 @@ window.Game = React.createClass({
     },
 
     render: function() {
+        document.querySelector('html').style.backgroundColor = this.state.settings.darkMode === true ? "black" : "white";
+        let h1 = document.querySelectorAll('h1');
+        if (h1[0] !== undefined) h1[0].style.color = this.state.settings.darkMode === true ? "white" : "black";
+      
         if (!this.state.game) {
             return (<p className="loading">Loading&hellip;</p>);
         }
