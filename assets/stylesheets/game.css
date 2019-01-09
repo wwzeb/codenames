@@ -13,8 +13,18 @@
         "Helvetica Neue", "Lucida Grande";
 }
 
+.dark-mode #share{
+    color: #DDD;
+    border-bottom: 1px #555 solid;
+}
+
+
 #share .url {
     color: #888;
+}
+
+.dark-mode #share .url{
+    color: #DDD;
 }
 
 #status-line { text-align: center; margin-bottom: 1em; }
@@ -27,6 +37,7 @@
 }
 
 #remaining { float: left; }
+.dark-mode #remaining { color: white; }
 #remaining .red-remaining { color: #D13030; }
 #remaining .blue-remaining { color: #4183CC; }
 
@@ -48,6 +59,12 @@
     cursor: pointer;
 }
 
+.dark-mode #end-turn-btn{
+    color: #DDD;
+    border: 1px #555 solid;
+    background: #666;
+}
+
 #mode-toggle {
     text-align: right;
     margin: 2em 5px 2em 0;
@@ -60,6 +77,13 @@
     padding: 5px;
     border: 1px #DDD solid;
     background: #EEE;
+    cursor: pointer;
+}
+
+.dark-mode #mode-toggle button {
+    padding: 5px;
+    border: 1px #555 solid;
+    background: #666;
     cursor: pointer;
 }
 
@@ -89,8 +113,18 @@
     color: #999;
 }
 
+#mode-toggle.player-selected button.player,
+#mode-toggle.codemaster-selected button.codemaster {
+    cursor: auto;
+    color: #ddd;
+}
+
 #next-game-btn {
     margin-left: 10px;
+}
+
+.dark-mode #next-game-btn {
+    color: #ddd;
 }
 
 .cell {
@@ -106,6 +140,7 @@
 .player .board .hidden-word { cursor: pointer; }
 
 .board .neutral.revealed { background: #EDE2CC; }
+.dark-mode .board .neutral.revealed { background: rgb(104, 93, 75); }
 
 .cell .word {
     vertical-align: middle;
@@ -113,10 +148,15 @@
 }
 
 .cell { background: #E8E8E8; }
+.dark-mode .cell {
+    background: rgb(39, 39, 39); 
+    color:#FFF;
+}
 
 .codemaster .red.hidden-word { color: #D13030; }
 .codemaster .blue.hidden-word { color: #4183CC; }
 .codemaster .black.hidden-word { background: #CCC; }
+.dark-mode.codemaster .black.hidden-word { background: #777; }
 .codemaster .cell { font-weight: bold; }
 
 .board .red.revealed { background: #D13030; color: #FFF; }
