@@ -77,7 +77,7 @@ window.Game = React.createClass({
             }
             this.setState({game: data});
         });
-        setTimeout(this.refresh, 3000);
+        setTimeout(this.refresh, 100);
     },
 
     toggleRole: function(e, role) {
